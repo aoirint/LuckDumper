@@ -3,7 +3,8 @@ using BepInEx.Logging;
 
 namespace LuckDumper;
 
-[BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
+[BepInPlugin("com.aoirint.luckdumper", "Luck Dumper", "0.1.0.0")]
+[BepInProcess("Lethal Company.exe")]
 public class Plugin : BaseUnityPlugin
 {
     internal static new ManualLogSource Logger;
@@ -12,6 +13,6 @@ public class Plugin : BaseUnityPlugin
     {
         // Plugin startup logic
         Logger = base.Logger;
-        Logger.LogInfo($"Plugin {MyPluginInfo.PLUGIN_GUID} is loaded!");
+        Logger.LogInfo("Plugin com.aoirint.luckdumper is loaded!");
     }
 }
