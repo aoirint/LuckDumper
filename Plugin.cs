@@ -23,15 +23,9 @@ public class Plugin : BaseUnityPlugin
     [HarmonyPrefix]
     static bool BeginUsingTerminalPrefix() {
         foreach (var unlockable in StartOfRound.Instance.unlockablesList.unlockables) {
-            Logger.LogInfo($"{unlockable.unlockableName},{unlockable.luckValue}");
-        }
+            var shopSelectionNode = unlockable.shopSelectionNode;
 
-		var terminalScript = FindObjectOfType<Terminal>();
-
-        foreach (var terminalNode in terminalScript.terminalNodes.terminalNodes) {
-            if (terminalNode.shipUnlockableID != -1) {
-                Logger.LogInfo($"{terminalNode.name},{terminalNode.shipUnlockableID},{terminalNode.itemCost}");
-            }
+            Logger.LogInfo($"{unlockable.unlockableName},{unlockable.luckValue},{shopSelectionNode.itemCost}");
         }
 
         return true;
