@@ -11,5 +11,5 @@ Copy these DLL files into `libs/` from `C:\Program Files (x86)\Steam\steamapps\c
 ### Build
 
 ```powershell
-dotenv build
+dotnet build
 ```
