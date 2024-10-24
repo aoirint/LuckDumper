@@ -26,6 +26,14 @@ public class Plugin : BaseUnityPlugin
             Logger.LogInfo($"{unlockable.unlockableName},{unlockable.luckValue}");
         }
 
+		var terminalScript = FindObjectOfType<Terminal>();
+
+        foreach (var terminalNode in terminalScript.terminalNodes.terminalNodes) {
+            if (terminalNode.shipUnlockableID != -1) {
+                Logger.LogInfo($"{terminalNode.name},{terminalNode.shipUnlockableID},{terminalNode.itemCost}");
+            }
+        }
+
         return true;
     }
 }
