@@ -1,6 +1,6 @@
 # Luck Dumper
 
-Lethal Company Mod to dump luck values of unlockable items.
+Lethal Company Mod to dump luck values of unlockable items on using terminal.
 
 ## Development
 
