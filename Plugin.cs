@@ -1,5 +1,6 @@
 ﻿using BepInEx;
 using BepInEx.Logging;
+using HarmonyLib;
 
 namespace LuckDumper;
 
@@ -14,5 +15,17 @@ public class Plugin : BaseUnityPlugin
         // Plugin startup logic
         Logger = base.Logger;
         Logger.LogInfo("Plugin com.aoirint.luckdumper is loaded!");
+
+        Harmony.CreateAndPatchAll(typeof(Plugin));
+    }
+
+    [HarmonyPatch(typeof(Terminal), "BeginUsingTerminal")]
+    [HarmonyPrefix]
+    static bool BeginUsingTerminalPrefix() {
+        foreach (var unlockable in StartOfRound.Instance.unlockablesList.unlockables) {
+            Logger.LogInfo($"{unlockable.unlockableName},{unlockable.luckValue}");
+        }
+
+        return true;
     }
 }
