@@ -4,7 +4,7 @@ using HarmonyLib;
 
 namespace LuckDumper;
 
-[BepInPlugin("com.aoirint.luckdumper", "Luck Dumper", "0.1.0.0")]
+[BepInPlugin("com.aoirint.luckdumper", "Luck Dumper", "0.1.0")]
 [BepInProcess("Lethal Company.exe")]
 public class Plugin : BaseUnityPlugin
 {
