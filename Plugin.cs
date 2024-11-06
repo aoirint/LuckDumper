@@ -24,9 +24,9 @@ public class Plugin : BaseUnityPlugin
         foreach (var unlockable in StartOfRound.Instance.unlockablesList.unlockables) {
             var shopSelectionNode = unlockable.shopSelectionNode;
 
-            int itemCost = -1;
+            var itemCost = "";
             if (shopSelectionNode != null) {
-                itemCost = shopSelectionNode.itemCost;
+                itemCost = shopSelectionNode.itemCost.ToString();
             }
 
             Logger.LogInfo($"{unlockable.unlockableName},{unlockable.luckValue},{itemCost}");
