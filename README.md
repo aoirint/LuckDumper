@@ -23,12 +23,14 @@ dotnet build --configuration Release
 
 ### Debug build
 
-Copy a DLL file into `C:\Program Files (x86)\Steam\steamapps\common\Lethal Company\BepInEx\plugins` from `bin\Debug\netstandard2.1\LuckDumper.dll`.
+1. Install BeplnEx: https://docs.bepinex.dev/articles/user_guide/installation/index.html
+2. Copy a DLL file into `C:\Program Files (x86)\Steam\steamapps\common\Lethal Company\BepInEx\plugins` from `bin\Debug\netstandard2.1\LuckDumper.dll`.
 
 ### Release build
 
-Copy a DLL file into into `C:\Program Files (x86)\Steam\steamapps\common\Lethal Company\BepInEx\plugins` from `bin\Release\netstandard2.1\LuckDumper.dll`.
+1. Install BeplnEx: https://docs.bepinex.dev/articles/user_guide/installation/index.html
+2. Copy a DLL file into into `C:\Program Files (x86)\Steam\steamapps\common\Lethal Company\BepInEx\plugins` from `bin\Release\netstandard2.1\LuckDumper.dll`.
 
 ### r2modman
 
-Select a DLL file from `Settings > Import local mod`.
+1. Select a DLL file from `Settings > Import local mod`.
