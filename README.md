@@ -9,7 +9,7 @@ Copy a DLL file into `lib/` from `C:\Program Files (x86)\Steam\steamapps\common\
 
 - `Lethal Company_Data\Managed\Assembly-CSharp.dll`
 
-### Build
+## Build
 
 ```powershell
 # Debug build
@@ -19,7 +19,7 @@ dotnet build
 dotnet build --configuration Release
 ```
 
-### Install
+## Install
 
 ### Debug build
 
