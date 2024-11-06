@@ -12,16 +12,15 @@ public class Plugin : BaseUnityPlugin
         
     private void Awake()
     {
-        // Plugin startup logic
         Logger = base.Logger;
         Logger.LogInfo("Plugin com.aoirint.luckdumper is loaded!");
 
         Harmony.CreateAndPatchAll(typeof(Plugin));
     }
 
-    [HarmonyPatch(typeof(Terminal), "BeginUsingTerminal")]
-    [HarmonyPrefix]
-    static bool BeginUsingTerminalPrefix() {
+    [HarmonyPatch(typeof(StartOfRound), "Awake")]
+    [HarmonyPostfix]
+    static void StartOfRoundPostfix() {
         foreach (var unlockable in StartOfRound.Instance.unlockablesList.unlockables) {
             var shopSelectionNode = unlockable.shopSelectionNode;
 
@@ -32,7 +31,5 @@ public class Plugin : BaseUnityPlugin
 
             Logger.LogInfo($"{unlockable.unlockableName},{unlockable.luckValue},{itemCost}");
         }
-
-        return true;
     }
 }
