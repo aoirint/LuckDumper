@@ -4,7 +4,8 @@ Lethal Company Mod to dump luck values of unlockable items on joining a lobby.
 
 ## Development
 
-Copy a DLL file into `libs/` from `C:\Program Files (x86)\Steam\steamapps\common\Lethal Company`.
+Create a new directory `lib` at the repository root.
+Copy a DLL file into `lib/` from `C:\Program Files (x86)\Steam\steamapps\common\Lethal Company`.
 
 - `Lethal Company_Data\Managed\Assembly-CSharp.dll`
 
