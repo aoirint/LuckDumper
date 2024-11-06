@@ -20,7 +20,7 @@ public class Plugin : BaseUnityPlugin
 
     [HarmonyPatch(typeof(StartOfRound), "Awake")]
     [HarmonyPostfix]
-    static void StartOfRoundPostfix() {
+    static void StartOfRoundPostAwakefix() {
         foreach (var unlockable in StartOfRound.Instance.unlockablesList.unlockables) {
             var shopSelectionNode = unlockable.shopSelectionNode;
 
