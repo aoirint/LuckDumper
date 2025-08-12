@@ -43,6 +43,10 @@ public class Plugin : BaseUnityPlugin
     [HarmonyPostfix]
     static void TimeOfDayStartPostfix()
     {
+        Logger.LogInfo("[Quota variables]");
+        Logger.LogInfo("Base increase: " + TimeOfDay.Instance.quotaVariables.baseIncrease);
+        Logger.LogInfo("Increase steepness: " + TimeOfDay.Instance.quotaVariables.increaseSteepness);
+
         var randomizerCurve = TimeOfDay.Instance.quotaVariables.randomizerCurve;
 
         Logger.LogInfo("[Quota randomizer curve]");
