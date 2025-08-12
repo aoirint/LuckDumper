@@ -46,6 +46,8 @@ public class Plugin : BaseUnityPlugin
         var randomizerCurve = TimeOfDay.Instance.quotaVariables.randomizerCurve;
 
         Logger.LogInfo("[Quota randomizer curve]");
+        Logger.LogInfo("Pre wrap mode: " + randomizerCurve.preWrapMode);
+        Logger.LogInfo("Post wrap mode: " + randomizerCurve.postWrapMode);
         Logger.LogInfo("Time,Value");
         for (int i = 0; i < randomizerCurve.keys.Length; i++)
         {
