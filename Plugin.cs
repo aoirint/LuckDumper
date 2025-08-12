@@ -9,7 +9,7 @@ namespace LuckDumper;
 public class Plugin : BaseUnityPlugin
 {
     internal static new ManualLogSource Logger;
-        
+
     private void Awake()
     {
         Logger = base.Logger;
@@ -20,16 +20,38 @@ public class Plugin : BaseUnityPlugin
 
     [HarmonyPatch(typeof(StartOfRound), "Awake")]
     [HarmonyPostfix]
-    static void StartOfRoundAwakePostfix() {
-        foreach (var unlockable in StartOfRound.Instance.unlockablesList.unlockables) {
+    static void StartOfRoundAwakePostfix()
+    {
+        Logger.LogInfo("[Unlockables list]");
+        Logger.LogInfo("Name,Luck Value,Item Cost");
+        foreach (var unlockable in StartOfRound.Instance.unlockablesList.unlockables)
+        {
             var shopSelectionNode = unlockable.shopSelectionNode;
 
             var itemCost = "";
-            if (shopSelectionNode != null) {
+            if (shopSelectionNode != null)
+            {
                 itemCost = shopSelectionNode.itemCost.ToString();
             }
 
             Logger.LogInfo($"{unlockable.unlockableName},{unlockable.luckValue},{itemCost}");
         }
+        Logger.LogInfo("---");
+    }
+
+    [HarmonyPatch(typeof(TimeOfDay), "Start")]
+    [HarmonyPostfix]
+    static void TimeOfDayStartPostfix()
+    {
+        var randomizerCurve = TimeOfDay.Instance.quotaVariables.randomizerCurve;
+
+        Logger.LogInfo("[Quota randomizer curve]");
+        Logger.LogInfo("Time,Value");
+        for (int i = 0; i < randomizerCurve.keys.Length; i++)
+        {
+            var key = randomizerCurve.keys[i];
+            Logger.LogInfo($"{key.time},{key.value}");
+        }
+        Logger.LogInfo("---");
     }
 }
