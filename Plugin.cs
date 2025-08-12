@@ -48,11 +48,11 @@ public class Plugin : BaseUnityPlugin
         Logger.LogInfo("[Quota randomizer curve]");
         Logger.LogInfo("Pre wrap mode: " + randomizerCurve.preWrapMode);
         Logger.LogInfo("Post wrap mode: " + randomizerCurve.postWrapMode);
-        Logger.LogInfo("Time,Value");
+        Logger.LogInfo("Time,Value,InTangent,OutTangent,WeightedMode,InWeight,OutWeight");
         for (int i = 0; i < randomizerCurve.keys.Length; i++)
         {
             var key = randomizerCurve.keys[i];
-            Logger.LogInfo($"{key.time},{key.value}");
+            Logger.LogInfo($"{key.time},{key.value},{key.inTangent},{key.outTangent},{key.weightedMode},{key.inWeight},{key.outWeight}");
         }
         Logger.LogInfo("---");
     }
